@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.1.18:5432/cloudhealth
+    username: postgres
+    password: cloudhealth
+mybatis:
+  typeAliasesPackage: com.mbmed.healthone.po
+  mapper-locations: classpath:mapper/**/*.xml
+# 分页配置
+
+serverInfo:
+  serverType: 1 #server type,ho = 0 or his =1
+
+  His:
+    #server: http://192.168.1.17:8080/hodoctor
+    hisIp: http://192.168.1.18:8080
+    hisLoginUrl: http://192.168.1.18:8080/centerweb
+    jsessionids: Mobile001db2
+    doctorUrl: http://192.168.1.18:8081/hosdoctorweb
+    nurseUrl: http://192.168.1.18:8081/hosnurseweb
+    emrUrl: http://192.168.1.18:8081/emrweb
+    mrsweb: http://192.168.1.18:8081/mrsweb
+    interfaceweb: http://192.168.1.18:8089/interfaceweb
+  HO:
+    license: http://192.168.1.17:8888/list.license
+    licenseinfo: 139002  #授权码
+    loginServer:  http://192.168.1.31:8080/hodoctor/sysusers/login
+    loginHisServer: http://192.168.1.17:8888/Login.Service
+    hoIp: http://192.168.1.17:8888
+
+logging:
+  level:
+    root: info
+    com.mbmed.healthone: debug
+  file: log/healthone-dev.log
+
+
+server:
+  port: 80
